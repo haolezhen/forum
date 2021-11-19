@@ -18,8 +18,6 @@
 <script>
 import Step from "../components/step.vue";
 import sysLogo from "../components/sys-logo.vue";
-import {agendaList,
-    agendataSummary} from '../assets/js/config'
 export default {
   components: { sysLogo, Step },
   data() {

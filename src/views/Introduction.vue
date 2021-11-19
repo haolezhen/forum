@@ -17,7 +17,6 @@
 
 <script>
 import SysLogo from "../components/sys-logo.vue";
-import {forumIntro} from '../assets/js/config.js'
 export default {
   data() {
     return {

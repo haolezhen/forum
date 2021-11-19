@@ -59,7 +59,6 @@
 
 <script>
 import Step from "../components/step.vue";
-import {meetingList} from '../assets/js/config'
 export default {
   components: {Step },
   data(){
