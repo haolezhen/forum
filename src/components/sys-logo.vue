@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <img src="" alt="" />
+    <img src="~@/assets/img/logo.png" alt="" />
   </div>
 </template>
 
@@ -11,9 +11,8 @@ export default {};
 <style scoped>
 .logo {
   width: 100%;
-  /* height: 0.78rem; */
   padding: 0.45rem 0.4rem;
-  background-color: red;
+  padding-bottom: 0;
 }
 
 .logo img {

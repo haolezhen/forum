@@ -1,23 +1,17 @@
 <template>
   <div class="home">
     <sys-logo></sys-logo>
-
     <div class="title">
-      <img src="" alt="" />
+      <img src="~@/assets/img/home-2021.png" alt="" />
     </div>
-
     <div class="home-link-list">
       <div class="home-link" @click="goToIntroduction">论坛简介</div>
-      <div class="home-link">会议议程</div>
+      <div class="home-link" @click="goToMeetingAgenda">会议议程</div>
       <div class="home-link">报名注册</div>
       <div class="home-link">图片直播</div>
       <div class="home-link">联系我们</div>
     </div>
-
     <div class="time-address">2021年12月2日-4日 | 中国·博鳌</div>
-    <div class="footer">
-      <img src="" alt="" />
-    </div>
   </div>
 </template>
 
@@ -29,9 +23,12 @@ export default {
   name: "Home",
   methods: {
     goToIntroduction() {
-      this.$router.push('./Introduction')
-    }
-  }
+      this.$router.push("./Introduction");
+    },
+    goToMeetingAgenda() {
+      this.$router.push("./meetingAgenda");
+    },
+  },
 };
 </script>
 
@@ -39,29 +36,30 @@ export default {
 .home {
   width: 100%;
   height: 100%;
-  background: #1d2088;
+  background: url("~@/assets/img/home-bg.png");
+  background-size: cover;
 }
 
 .title {
   width: 100%;
-  background-color: antiquewhite;
+  margin-top: 0.9rem;
+  text-align: center;
 }
 
 .title img {
-  width: 100%;
-  height: 200px;
+  width: 6.67rem;
 }
 
 .home-link-list {
   width: 100%;
-  padding: 0.79rem 1.4rem;
-  margin: auto;
+  padding: 0.79rem 0;
 }
 
 .home-link {
   width: 4.7rem;
   height: 0.88rem;
-  margin-top: 0.16rem;
+  margin: auto;
+  margin-top: 0.32rem;
   font-size: 0.34rem;
   font-family: PingFang SC;
   font-weight: bold;
@@ -75,24 +73,13 @@ export default {
 }
 
 .time-address {
-  /* width: 4.01rem;
-  height: 0.28rem; */
   width: 100%;
   text-align: center;
+  padding-bottom: 2.47rem;
   font-size: 0.26rem;
   font-family: PingFang SC;
   font-weight: bold;
   color: #ffffff;
   line-height: 0.4rem;
-}
-
-.footer {
-  width: 100%;
-  background-color: aquamarine;
-}
-
-.footer img {
-  width: 100%;
-  height: 100px;
 }
 </style>
