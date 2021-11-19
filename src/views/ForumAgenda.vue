@@ -18,57 +18,14 @@
 <script>
 import Step from "../components/step.vue";
 import sysLogo from "../components/sys-logo.vue";
-
+import {agendaList,
+    agendataSummary} from '../assets/js/config'
 export default {
   components: { sysLogo, Step },
   data() {
     return {
-      agendaList: [
-        {
-          date: "12月2日",
-          agenda: [
-            {
-              time: "15:20-15:35",
-              info: "主持人开场、介绍嘉宾",
-            },
-            {
-              time: "15:20-15:35",
-              info: "主持人开场、介绍嘉宾",
-            },
-          ],
-        },
-        {
-          date: "12月3日",
-          agenda: [
-            {
-              time: "15:20-15:35",
-              info: "主持人开场、介绍嘉宾",
-            },
-            {
-              time: "15:20-15:35",
-              info: "主持人开场、介绍嘉宾",
-            },
-            {
-              time: "15:20-15:35",
-              info: `平行论坛四:“百年荣章 时代有我”2021中国文化发展论坛 平行论坛六:三产融合赋能乡村振兴暨福年品牌超级发布会`,
-            },
-            {
-              time: "15:20-15:35",
-              info: `平行论坛四:能乡村振兴暨福年品牌超级发布会`,
-            },
-          ],
-        },
-        {
-          date: "12月4日",
-          agenda: [
-            {
-              time: "15:20-15:35",
-              info: "主持人开场、介绍嘉宾",
-            },
-          ],
-        },
-      ],
-      summary: "2日-4日“新华社民族品牌工程•好物故事会”启动专场",
+      agendaList: agendaList,
+      summary: agendataSummary
     };
   },
 };
@@ -76,7 +33,7 @@ export default {
 
 <style scoped>
 .forum-agenda {
-  background: url("~@/assets/img/introduction-bg.png");
+  background: url("~@/assets/img/introduction-bg.png") no-repeat center bottom #19278b;
   background-size: contain;
   padding-bottom: 3.28rem;
 }
@@ -113,7 +70,7 @@ export default {
   text-align: center;
   font-size: 0.24rem;
   font-family: PingFang SC;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
   line-height: 0.42rem;
 }

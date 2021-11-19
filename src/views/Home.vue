@@ -8,7 +8,7 @@
       <div class="home-link" @click="goToIntroduction">论坛简介</div>
       <div class="home-link" @click="goToMeetingAgenda">会议议程</div>
       <div class="home-link">报名注册</div>
-      <div class="home-link">图片直播</div>
+      <div class="home-link" @click="gotoLive">图片直播</div>
       <div class="home-link">联系我们</div>
     </div>
     <div class="time-address">2021年12月2日-4日 | 中国·博鳌</div>
@@ -28,6 +28,9 @@ export default {
     goToMeetingAgenda() {
       this.$router.push("./meetingAgenda");
     },
+    gotoLive(){
+      window.location.href="https://live.photoplus.cn/live/82456016"
+    }
   },
 };
 </script>

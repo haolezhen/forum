@@ -9,7 +9,7 @@
           </p>
           <p class="step-line"></p>
         </div>
-        <p class="step-info">{{ item.info }}</p>
+        <p class="step-info" v-html="item.info"></p>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@ export default {
 .step-list {
   width: 100%;
   height: 100%;
-  line-height: 26px;
+  line-height: 0.36rem;
   box-sizing: border-box;
   color: #fff;
 }
@@ -46,8 +46,10 @@ export default {
   min-height: 0.74rem;
   font-size: 0.22rem;
   font-family: PingFang SC;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
+  width:1.5rem;
+  line-height:.5rem;
 }
 
 .step-center {
@@ -57,11 +59,12 @@ export default {
 .step-center .step-dot {
   position: absolute;
   transform: translate(-50%, 100%);
-  width: 0.15rem;
-  height: 0.15rem;
+  width: 0.16rem;
+  height: 0.16rem;
   border-radius: 50%;
   background-color: rgba(0, 225, 254, 0.2);
   z-index: 2;
+  top:0.03rem;
 }
 
 .step-center .dot2 {
@@ -70,8 +73,8 @@ export default {
   top: 50%;
   transform: translate(-50%, -50%);
   display: block;
-  width: 0.09rem;
-  height: 0.09rem;
+  width: 0.1rem;
+  height: 0.1rem;
   border-radius: 50%;
   background-color: #00e1fe;
   z-index: 2;
@@ -96,7 +99,16 @@ export default {
   /* height: 0.61rem; */
   font-size: 0.26rem;
   font-family: PingFang SC;
-  font-weight: bold;
+  /* font-weight: bold; */
+  margin-bottom:0.26rem;
   color: #ffffff;
+  line-height:.5rem;
+}
+
+</style>
+<style>
+.step-info span{
+  display:block;
+  margin-bottom:0.26rem;
 }
 </style>
