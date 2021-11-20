@@ -558,26 +558,11 @@ const meetingList = [
   },
 ];
 
-// export {
-//     forumIntro,
-//     agendaList,
-//     agendataSummary,
-//     meetingList
-// }
-
-// 联系我们的电话信息
-const phoneList = [
-  {
-    department: "财富网",
-    name: "王女士",
-    number: "1111111",
-  },
-];
 
 const registerEndedInfo = {
   title: "报名注册已结束!",
   content: [
-    `如果您的行程发生变更,请及时联系您的邀请人,以便我们及时调整接待方案,感谢您参与2021年中国企业家博鳌论坛·中国财富峰会,我们在博鳌等您!`,
+    `如果您的行程发生变更，请及时联系您的邀请人，以便我们及时调整接待方案，感谢您参与2021年中国企业家博鳌论坛·中国财富峰会，我们在博鳌等您！`,
   ],
   sign: "2021中国企业家博鳌论坛·中国财富峰会",
 };
@@ -590,3 +575,6 @@ const registerSuccessInfo = {
   ],
   sign: "2021中国企业家博鳌论坛·中国财富峰会",
 };
+
+//报名结束时间
+const endTime = '2021-11-02 17:00'

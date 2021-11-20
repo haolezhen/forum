@@ -46,7 +46,7 @@ export default {
     if (this.$route.query.success) {
       this.endedInfo = registerSuccessInfo;
       let call = this.$route.query.sex === "男" ? "先生" : "女士";
-      this.endedInfo.content[0] = `尊敬的${this.$route.query.name}${call},感谢您参与2021中国企业家博鳌论坛·中国财富峰会,我们的工作人员将尽快与您确认相关行程.`;
+      this.endedInfo.content[0] = `尊敬的${this.$route.query.name}${call},感谢您参与2021中国企业家博鳌论坛·中国财富峰会,我们的工作人员将尽快与您确认相关行程。`;
     }
   },
 };

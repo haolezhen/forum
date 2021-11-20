@@ -33,8 +33,13 @@ export default {
   name: "Home",
   data() {
     return {
-      ended: true,
+      ended: false,
     };
+  },
+  created(){
+    let nowDate = new Date();
+    let endDate = new Date(endTime);
+    this.ended = nowDate > endDate
   },
   methods: {
     goToIntroduction() {
