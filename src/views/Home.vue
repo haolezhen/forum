@@ -105,7 +105,6 @@ export default {
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 0.08rem;
-  opacity: 0.8;
   color: #ffffff;
   background: rgba(255, 255, 255, 0);
   transform: translate(-1.5rem, 0);

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="step-list">
-      <div class="step" v-for="(item, index) in agenda" :key="index">
+      <div class="step" :class="{isColor:item.isColor}" v-for="(item, index) in agenda" :key="index">
         <p class="step-time">{{ item.time }}</p>
         <div class="step-center">
           <p class="step-dot">
@@ -40,11 +40,11 @@ export default {
 .step {
   display: flex;
   justify-content: space-between;
+  font-size:0.22rem;
 }
 
 .step-time {
   min-height: 0.74rem;
-  font-size: 0.22rem;
   font-family: PingFang-SC-ExtraLight;
   /* font-weight: bold; */
   color: #ffffff;
@@ -97,12 +97,23 @@ export default {
 .step-info {
   width: 60%;
   /* height: 0.61rem; */
-  font-size: 0.26rem;
   font-family: PingFang-SC-ExtraLight;
   /* font-weight: bold; */
   margin-bottom:0.26rem;
   color: #ffffff;
   line-height:.5rem;
+}
+.isColor{
+  background: linear-gradient(90deg, #FFE07E 0%, #FF9834 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:0.24rem;
+}
+.isColor .step-dot{
+  background-color:rgba(255, 223, 126, .2);
+}
+.isColor .dot2{
+  background-color:rgba(255, 223, 126, 1);
 }
 
 </style>

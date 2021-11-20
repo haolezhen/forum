@@ -89,13 +89,11 @@ export default {
   margin: auto;
   font-size: 0.34rem;
   font-family: PingFang SC;
-  font-weight: bold;
   line-height: 0.88rem;
   text-align: center;
   text-decoration: none;
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255,255,255,0.8);
   border-radius: 0.08rem;
-  opacity: 0.8;
   color: #ffffff;
   background: rgba(255, 255, 255, 0);
 }

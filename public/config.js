@@ -22,7 +22,7 @@ const forumIntro = [
 //date 日期
 //time 时间
 //info 内容
-
+//isColor:true 设置字体渐变
 const agendaList = [
   {
     date: "12月2日",
@@ -37,6 +37,7 @@ const agendaList = [
                 --超级发布会`,
       },
       {
+        isColor:true,
         time: "18:00-21:00",
         info: `中国企业家博鳌论坛欢迎夜</br>
                 --品牌品鉴会`,
@@ -55,6 +56,7 @@ const agendaList = [
         info: "中国品牌加油·博鳌健康跑",
       },
       {
+        isColor:true,
         time: "08:30-17:30",
         info: "平行论坛一：2021国际黄金市场年度峰会",
       },
@@ -131,9 +133,10 @@ const agendaList = [
             `,
       },
       {
+        isColor:true,
         time: "14:00-20:45",
-        info: `<span>平行论坛八：中国财富峰会</span>
-            <span>中国财富峰会·潮中国之夜</span>
+        info: `平行论坛八：中国财富峰会</br>
+            中国财富峰会·潮中国之夜
             `,
       },
       {
