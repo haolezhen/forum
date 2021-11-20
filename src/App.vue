@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import axios from "axios";
 export default ({
   data(){
     return {
@@ -34,7 +34,7 @@ export default ({
       let params = {
         "url": link
       }
-      this.axios.get('https://app.cfbond.com/cfbond_app/Wx.getSignature.action',{params}).then(result => {
+      axios.get('https://app.cfbond.com/cfbond_app/Wx.getSignature.action',{params}).then(result => {
         let data = result.data;
         wx.config({
 						debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来
