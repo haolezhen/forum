@@ -31,6 +31,11 @@ import sysLogo from "../components/sys-logo.vue";
 export default {
   components: { sysLogo },
   name: "Home",
+  data() {
+    return {
+      ended: true,
+    };
+  },
   methods: {
     goToIntroduction() {
       this.$router.push("./introduction");
@@ -45,7 +50,11 @@ export default {
       this.$router.push("./contactUs");
     },
     goToRegister() {
-      this.$router.push("./register");
+      if (this.ended) {
+        this.$router.push("./ended");
+      } else {
+        this.$router.push("./register");
+      }
     },
   },
 };

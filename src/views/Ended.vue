@@ -30,9 +30,24 @@ export default {
   },
   data() {
     return {
-      // endedInfo: registerEndedInfo,
-      endedInfo: registerSuccessInfo,
+      endedInfo: registerEndedInfo,
+      // endedInfo: registerSuccessInfo,
+      successInfo: {
+        title: "报名注册成功!",
+        content: [
+          `尊敬的XXX先生/女士,感谢您参与2021中国企业家博鳌论坛·中国财富峰会,我们的工作人员将尽快与您确认相关行程.`,
+          `如果您的行程发生变更,请及时联系您的邀请人,以便我们及时调整接待方案,感谢您参与2021年中国企业家博鳌论坛·中国财富峰会,我们在博鳌等您!`,
+        ],
+        sign: "2021中国企业家博鳌论坛·中国财富峰会",
+      },
     };
+  },
+  created() {
+    if (this.$route.query.success) {
+      this.endedInfo = registerSuccessInfo;
+      let call = this.$route.query.sex === "男" ? "先生" : "女士";
+      this.endedInfo.content[0] = `尊敬的${this.$route.query.name}${call},感谢您参与2021中国企业家博鳌论坛·中国财富峰会,我们的工作人员将尽快与您确认相关行程.`;
+    }
   },
 };
 </script>
@@ -48,10 +63,10 @@ export default {
   width: 6.37rem;
   margin: 1.16rem auto;
   font-family: PingFang SC;
-  font-weight: bold;
   line-height: 0.54rem;
 
   .title {
+    font-weight: bold;
     font-size: 0.5rem;
     text-align: center;
     color: #00ddfe;

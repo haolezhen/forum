@@ -99,7 +99,6 @@ export default {
   margin-bottom: 0.56rem;
   font-size: 0.3rem;
   font-family: PingFang SC;
-  font-weight: bold;
 
   img {
     width: 0.23rem;
