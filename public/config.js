@@ -577,4 +577,4 @@ const registerSuccessInfo = {
 };
 
 //报名结束时间
-const endTime = '2021-11-02 17:00'
+const endTime = '2021-12-02 17:00'

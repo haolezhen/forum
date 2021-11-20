@@ -45,7 +45,7 @@ export default {
   created() {
     if (this.$route.query.success) {
       this.endedInfo = registerSuccessInfo;
-      let call = this.$route.query.sex === "男" ? "先生" : "女士";
+      let call = this.$route.query.sex === "0" ? "先生" : "女士";
       this.endedInfo.content[0] = `尊敬的${this.$route.query.name}${call},感谢您参与2021中国企业家博鳌论坛·中国财富峰会,我们的工作人员将尽快与您确认相关行程。`;
     }
   },
@@ -54,9 +54,10 @@ export default {
 
 <style lang="scss" scooped>
 .ended {
-  background: url(~@/assets/img/home-bg.png);
+  min-height:100vh;
+  background: url(~@/assets/img/home-bg.png)  no-repeat center bottom #19278b;;
   background-size: cover;
-  padding-bottom: 8.47rem;
+  padding-bottom: 2rem;
 }
 
 .info {

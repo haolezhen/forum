@@ -23,8 +23,8 @@
         </p>
         <select ref="sex" v-model="formValue.sex" @blur="inputChange('sex')">
           <option value="" disabled selected hidden>请选择性别</option>
-          <option value="男">男</option>
-          <option value="女">女</option>
+          <option value="0">男</option>
+          <option value="1">女</option>
         </select>
         <!-- <input
           type="text"
@@ -125,13 +125,10 @@
           ref="dateInPicker"
           v-model="formValue.rzdate"
           class="myPicker"
-          type="datetime"
+          type="date"
           year-format="{value}"
           month-format="{value}"
           date-format="{value}"
-          hour-format="{value}"
-          minute-format="{value}"
-          second-format="{value}"
           @confirm="dateInConfirm()"
         >
         </mt-datetime-picker>
@@ -155,13 +152,10 @@
           ref="dateOutPicker"
           v-model="formValue.tfdate"
           class="myPicker"
-          type="datetime"
+          type="date"
           year-format="{value}"
           month-format="{value}"
           date-format="{value}"
-          hour-format="{value}"
-          minute-format="{value}"
-          second-format="{value}"
           @confirm="dateOutConfirm()"
         >
         </mt-datetime-picker>
@@ -204,11 +198,11 @@ export default {
         number: "",
         crad: "",
         // 是否需要接机；0:不需要，1:需要
-        ishb: 1,
+        ishb: "0",
         // 航班号
         hbh: "",
         // 代订酒店；0不需要，1需要
-        isjd: "",
+        isjd: "0",
         rzdate: "",
         tfdate: "",
         lt: [],
@@ -257,17 +251,7 @@ export default {
             "-" +
             (time.getMonth() + 1) +
             "-" +
-            time.getDate() +
-            " " +
-            (time.getHours() < 10 ? "0" + time.getHours() : time.getHours()) +
-            ":" +
-            (time.getMinutes() < 10
-              ? "0" + time.getMinutes()
-              : time.getMinutes()) +
-            ":" +
-            (time.getSeconds() < 10
-              ? "0" + time.getSeconds()
-              : time.getSeconds())
+            time.getDate() 
         : "";
     },
     getForumList() {
@@ -297,18 +281,27 @@ export default {
         } else {
           this.formValue.rzdate = this.formData(this.formValue.rzdate);
           this.formValue.tfdate = this.formData(this.formValue.tfdate);
-          const json = this.formValue;
+          let json = {...this.formValue};
+          json.lt = json.lt.join(',');
+          let params = {
+            json:JSON.stringify(json)
+          }
           axios
-            .post("https://yb.cfbond.com/ba/add_register", { json: json })
+            .get("https://yb.cfbond.com/ba/add_register",{params})
             .then((res) => {
-              this.$router.push({
-                path: "./Ended",
-                query: {
-                  success: true,
-                  name: this.formValue.name,
-                  sex: this.formValue.sex,
-                },
-              });
+              if(res.data.code === 200){
+                this.$router.push({
+                  path: "./Ended",
+                  query: {
+                    success: true,
+                    name: this.formValue.name,
+                    sex: this.formValue.sex,
+                  },
+                });
+              }else{
+                MessageBox("", "报名失败");
+              }
+              
             })
             .catch((err) => {
               this.$router.push({
@@ -345,6 +338,10 @@ export default {
   background: url("~@/assets/img/introduction-bg.png");
   background-size: cover;
   padding-bottom: 2.66rem;
+}
+option {
+  width:100%;
+  color:#000;
 }
 .form {
   width: 6.7rem;
