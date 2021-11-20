@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <sys-logo></sys-logo>
-    <div class="title">
+    <div class="title animate__fadeIn">
       <img src="~@/assets/img/home-2021.png" alt="" />
     </div>
     <div class="home-link-list">
-      <div class="home-link" @click="goToIntroduction">论坛简介</div>
-      <div class="home-link" @click="goToMeetingAgenda">会议议程</div>
-      <div class="home-link">报名注册</div>
-      <div class="home-link" @click="gotoLive">图片直播</div>
-      <div class="home-link">联系我们</div>
+      <div class="home-link animate__fadeInLeft" @click="goToIntroduction">论坛简介</div>
+      <div class="home-link animate__fadeInLeft" @click="goToMeetingAgenda">会议议程</div>
+      <div class="home-link animate__fadeInLeft">报名注册</div>
+      <div class="home-link animate__fadeInLeft" @click="gotoLive">图片直播</div>
+      <div class="home-link animate__fadeInLeft">联系我们</div>
     </div>
     <div class="time-address">2021年12月2日-4日 | 中国·博鳌</div>
   </div>
@@ -36,6 +36,12 @@ export default {
 </script>
 
 <style scoped>
+.animate__fadeInLeft{
+  animation:fadeInLeft 1s; 
+}
+.animate__fadeIn{
+  animation:fadeIn 1s; 
+}
 .home {
   width: 100%;
   height: 100%;
@@ -73,8 +79,37 @@ export default {
   opacity: 0.8;
   color: #ffffff;
   background: rgba(255, 255, 255, 0);
+  transform: translate(-1.5rem,0);
+  animation-fill-mode: forwards;
 }
-
+.home-link:nth-child(2){
+  animation-delay: 0.1s;
+}
+.home-link:nth-child(3){
+  animation-delay: 0.2s;
+}
+.home-link:nth-child(4){
+  animation-delay: 0.3s;
+}
+.home-link:nth-child(5){
+  animation-delay: 0.4s;
+}
+@keyframes fadeInLeft  {
+  0% {
+    transform:translate(-1.5rem,0)
+  }
+  100% {
+    transform:translate(0,0)
+  }
+}
+@keyframes fadeIn  {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .time-address {
   width: 100%;
   text-align: center;
