@@ -74,7 +74,7 @@ export default {
 <style lang="scss" scoped>
 .contact {
   min-height:100vh;
-  background: url("~@/assets/img/home-bg.png") no-repeat center bottom #19278b;
+  background: url("~@/assets/img/common.jpg") no-repeat center bottom #19278b;
   background-size: cover;
   padding-bottom: 2.49rem;
 }

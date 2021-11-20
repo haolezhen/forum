@@ -335,7 +335,7 @@ export default {
 
 <style lang="scss" scoped>
 .register {
-  background: url("~@/assets/img/introduction-bg.png");
+  background: url("~@/assets/img/zhuce.jpg");
   background-size: cover;
   padding-bottom: 2.66rem;
 }

@@ -75,7 +75,7 @@ export default {
 .home {
   width: 100%;
   height: 100%;
-  background: url("~@/assets/img/home-bg.png");
+  background: url("~@/assets/img/common.jpg");
   background-size: cover;
 }
 

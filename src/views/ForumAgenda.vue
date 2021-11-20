@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .forum-agenda {
-  background: url("~@/assets/img/introduction-bg.png") no-repeat center bottom #19278b;
+  background: url("~@/assets/img/date.jpg") no-repeat center bottom #19278b;
   background-size: contain;
   padding-bottom: 3.28rem;
 }

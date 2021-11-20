@@ -11,7 +11,7 @@ export default {};
 <style scoped>
 .logo {
   width: 100%;
-  padding: 0.45rem 0.4rem;
+  padding: 0.42rem 0.4rem;
   padding-bottom: 0;
 }
 
