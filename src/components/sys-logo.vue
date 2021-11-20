@@ -18,5 +18,6 @@ export default {};
 .logo img {
   width: 3.05rem;
   height: 0.78rem;
+  display:block;
 }
 </style>

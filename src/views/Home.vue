@@ -74,19 +74,19 @@ export default {
 }
 .home {
   width: 100%;
-  height: 100%;
-  background: url("~@/assets/img/common.jpg");
+  height: 100vh;
+  background: url("~@/assets/img/common.jpg") center bottom;
   background-size: cover;
 }
 
 .title {
-  width: 100%;
   margin-top: 0.9rem;
-  text-align: center;
+  padding:0 0.42rem;
 }
 
 .title img {
   width: 6.67rem;
+  display: block;
 }
 
 .home-link-list {
@@ -111,6 +111,9 @@ export default {
   background: rgba(255, 255, 255, 0);
   transform: translate(-1.5rem, 0);
   animation-fill-mode: forwards;
+}
+.home-link:first-child{
+  margin-top:0;
 }
 .home-link:nth-child(2) {
   animation-delay: 0.1s;
@@ -143,7 +146,6 @@ export default {
 .time-address {
   width: 100%;
   text-align: center;
-  padding-bottom: 2.47rem;
   font-size: 0.26rem;
   font-family: PingFang SC;
   font-weight: bold;
