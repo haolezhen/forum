@@ -373,6 +373,9 @@ option {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
   }
+  input{
+    font-size:16px;
+  }
 
   .select-date {
     line-height: 0.8rem;
