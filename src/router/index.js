@@ -24,6 +24,21 @@ const routes = [
     path: '/meetingAgenda',
     name: 'MeetingAgenda',
     component: () => import('../views/MeetingAgenda.vue')
+  },
+  {
+    path: '/contactUs',
+    name: 'ContactUs',
+    component: () => import('../views/ContactUs.vue')
+  },
+  {
+    path: '/ended',
+    name: 'Ended',
+    component: () => import('../views/Ended.vue')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/Register.vue')
   }
 ]
 

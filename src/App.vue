@@ -12,5 +12,6 @@
 }
 html,body{
   min-height:100%;
+  background-color: #1D2088;
 }
 </style>
