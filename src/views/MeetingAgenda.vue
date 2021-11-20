@@ -74,15 +74,20 @@ export default {
   methods:{
     swiperSLide(){
       let tSpeed = 300 //切换速度300ms
-      let navSlideWidth = 0,navActiveSlideLeft = 0,navSum = 0,navWidth = 0,clientWidth = 0,activeIndex = 0,activeSlidePosition = 0;
-
+      let navSlideWidth = 0,initialSlide = 0,navActiveSlideLeft = 0,navSum = 0,navWidth = 0,clientWidth = 0,activeIndex = 0,activeSlidePosition = 0;
+      this.tabs.forEach((item,i) => {
+        if(item.id === 4){
+          initialSlide = i
+        }
+      })
   let navSwiper = new Swiper('#newsWapNav', {
   	slidesPerView:"auto",
   	freeMode: true,
+    initialSlide:initialSlide,
   	on: {
   		init: function() {
   			navSlideWidth = this.slides.eq(0).css('width'); //导航字数需要统一,每个导航宽度一致
-        this.slides.eq(0).addClass('active');
+        // this.slides.eq(3).addClass('active');
   			navSum = this.slides[this.slides.length - 1].offsetLeft //最后一个slide的位置
 
   			clientWidth = parseInt(this.$wrapperEl.css('width')) //Nav的可视宽度
@@ -103,7 +108,7 @@ export default {
 						$('.swiper-slide').removeClass("tab-pane fade")
 						//var tabItem = $('.tab .tabItem');
 						let mySwiper = new Swiper('#pageCon.swiper-container', {
-							autoplay: false,autoHeight: true,
+							autoplay: false,autoHeight: true,initialSlide:initialSlide,
 							on:{
 								//swiper从当前slide开始过渡到另一个slide时执行
 								slideChangeTransitionStart: function(){
