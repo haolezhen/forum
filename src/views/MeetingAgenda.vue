@@ -29,17 +29,16 @@
               </div>
               <div class="details-item" v-if="item.info.organizer!=''">
                 <p class="deteils-attr">主办单位：</p>
-                <p class="details-value">{{item.info.organizer}}</p>
+                <p class="details-value" v-html="item.info.organizer"></p>
               </div>
               <div class="details-item" v-if="item.info.coHosted!=''">
                 <p class="deteils-attr">联合主办：</p>
-                <p class="details-value">
-                  {{item.info.coHosted}}
+                <p class="details-value" v-html="item.info.coHosted">
                 </p>
               </div>
               <div class="details-item" v-if="item.info.organizer2!=''">
                 <p class="deteils-attr">承办单位：</p>
-                <p class="details-value">{{item.info.organizer2}}</p>
+                <p class="details-value" v-html="item.info.organizer2"></p>
               </div>
             </div>
             <div class="agenda-box">
@@ -167,7 +166,7 @@ transitionStart: function() {
 
 .banner {
   width: 7.5rem;
-  height: 1.44rem;
+  height: 1.54rem;
   background: #1e48c7;
   box-shadow: 0rem 0rem 0rem 0rem rgba(6, 23, 57, 0.2);
   padding:0.24rem 0;

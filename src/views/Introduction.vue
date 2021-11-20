@@ -5,7 +5,7 @@
       <div class="forum-list" v-for="(item, index) in forumList" :key="index">
         <div class="title">{{ item.title }}</div>
         <div class="info">{{ item.subtitle }}</div>
-        <div class="content">{{ item.content }}</div>
+        <div class="content" v-html="item.content"></div>
       </div>
     </div>
     <div class="home-link-list">
@@ -74,7 +74,6 @@ export default {
   margin: 0 0.38rem 0 0.41rem;
   font-weight:normal;
 }
-
 .home-link-list {
   width: 100%;
   padding: 1.24rem 0 2.48rem 0;
@@ -100,5 +99,10 @@ export default {
 
 .home-link:last-child {
   margin-top: 0.42rem;
+}
+</style>
+<style>
+.content span{
+  display:block;
 }
 </style>
