@@ -37,16 +37,18 @@ export default {
 }
 
 .forum-title {
+  margin-top:.6rem;
   text-align: center;
 }
 
 .forum-title img {
   width: 4.32rem;
+  display:block;
+  margin:0 auto;
 }
 
 .agenda-list {
-  padding: 0.5rem;
-  padding-bottom: 0;
+  padding: 0.6rem 0.5rem 0;
 }
 
 .date {
@@ -59,7 +61,7 @@ export default {
 .line {
   width: 6.5rem;
   height: 0.02rem;
-  margin: 0.24rem 0;
+  margin: 0.24rem 0 0.38rem;
   background: linear-gradient(90deg, #03d9eb, #007eff);
 }
 

@@ -403,7 +403,7 @@ option {
 }
 .form {
   width: 6.7rem;
-  margin: 0.81rem auto;
+  margin: 0.8rem auto;
 }
 
 .form-item {

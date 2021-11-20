@@ -178,12 +178,19 @@ transitionStart: function() {
 }
 
 .meeting-details {
-  padding: 0.78rem 0.5rem;
+  padding: 0.8rem 0.5rem;
   font-size: 0.26rem;
-  font-family: PingFang SC;
-  font-weight: bold;
-  line-height: 0.64rem;
+  font-family: PingFang-SC-ExtraLight;
   color: #ffffff;
+}
+.details-item{
+  margin-bottom:0.38rem;
+}
+.details-item:last-child{
+  margin-bottom:0;
+}
+.details-value{
+  line-height:0.4rem;
 }
 .agenda-box{
   padding-bottom:3rem;
@@ -217,7 +224,7 @@ transitionStart: function() {
 .line {
   width: 6.5rem;
   height: 0.02rem;
-  margin: 0.24rem 0.5rem;
+  margin: 0.3rem 0.5rem 0.4rem;
   background: linear-gradient(90deg, #03d9eb, #007eff);
 }
 

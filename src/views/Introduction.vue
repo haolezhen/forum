@@ -51,20 +51,22 @@ export default {
 }
 
 .title {
-  margin: 0.86rem 0.38rem 0 0.41rem;
+  margin: 0.8rem 0.38rem 0 0.41rem;
   font-size: 0.48rem;
   line-height: 0.64rem;
+  font-family: PingFang-SC-Regular;
 }
 
 .forum-list:first-child .title {
-  margin-top: 0.7rem;
+  margin-top: 0.8rem;
 }
 
 .info {
-  margin: 0.25rem 0 0.56rem 0;
+  margin: 0.24rem 0 0.56rem 0;
   font-size: 0.34rem;
-  line-height: 0.64rem;
+  line-height: 0.38rem;
   font-weight:normal;
+  font-family: PingFang-SC-ExtraLight;
 }
 
 .content {
@@ -73,6 +75,7 @@ export default {
   line-height: 0.54rem;
   margin: 0 0.38rem 0 0.41rem;
   font-weight:normal;
+  font-family: PingFang-SC-ExtraLight;
 }
 .home-link-list {
   width: 100%;

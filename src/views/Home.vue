@@ -91,7 +91,7 @@ export default {
 
 .home-link-list {
   width: 100%;
-  padding: 0.79rem 0;
+  padding: 0.92rem 0 0.8rem;
 }
 
 .home-link {
@@ -100,11 +100,10 @@ export default {
   margin: auto;
   margin-top: 0.32rem;
   font-size: 0.34rem;
-  font-family: PingFang SC;
-  font-weight: bold;
+  font-family: PingFang-SC-ExtraLight;
   line-height: 0.88rem;
   text-align: center;
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 0.08rem;
   opacity: 0.8;
   color: #ffffff;

@@ -81,10 +81,13 @@ export default {
 
 .contact-title {
   text-align: center;
+  margin:.8rem 0 .6rem;
 }
 
 .contact-title img {
   width: 4.32rem;
+  margin:0 auto;
+  display:block;
 }
 
 .phone-list {
@@ -100,6 +103,7 @@ export default {
   margin-bottom: 0.56rem;
   font-size: 0.3rem;
   font-family: PingFang SC;
+  justify-content: space-between;
 
   img {
     width: 0.23rem;
@@ -116,7 +120,7 @@ export default {
 }
 
 .phone-info {
-  margin-left: 0.55rem;
+  -margin-left: 1rem;
 }
 
 .number {
