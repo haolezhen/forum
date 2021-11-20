@@ -156,15 +156,16 @@ const agendaList = [
 const agendataSummary = `2日-4日 “新华社民族品牌工程•好物故事会”启动专场`;
 
 //论坛会议议程
-//name 论坛名称
-// theme:主题,
-//   time:时间,
-//   place:地点,
-//   organizer:主办单位,
-//   coHosted:联合主办,
-//   organizer2:承办单位
-// agenda 议程
-//unitname 单元名称
+//  id 论坛唯一标识（论坛先后顺序可以调整，但是每个论坛对应的id不要改）
+//  name 论坛名称
+//  theme:主题,
+//  time:时间,
+//  place:地点,
+//  organizer:主办单位,
+//  coHosted:联合主办,
+//  organizer2:承办单位
+//  agenda 议程
+//  unitname 单元名称
 const meetingList = [
   {
     id: 1,

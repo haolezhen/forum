@@ -39,7 +39,7 @@ export default {
 
 <style scoped>
 .introduction {
-  background: url("~@/assets/img/introduction-bg.png");
+  background: url("~@/assets/img/introduction-bg.png") no-repeat center bottom #19278b;;
   background-size: cover;
 }
 
