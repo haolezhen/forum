@@ -21,18 +21,25 @@
           <span class="star">*</span>
           <span class="prop">性别</span>
         </p>
-        <select ref="sex" v-model="formValue.sex" @blur="inputChange('sex')">
+        <!-- <select ref="sex" v-model="formValue.sex" @blur="inputChange('sex')">
           <option value="" disabled selected hidden>请选择性别</option>
           <option value="0">男</option>
           <option value="1">女</option>
-        </select>
-        <!-- <input
-          type="text"
+        </select> -->
+        <el-select
           ref="sex"
           v-model="formValue.sex"
-          placeholder="请输入性别"
           @blur="inputChange('sex')"
-        /> -->
+          placeholder="请选择"
+        >
+          <el-option
+            v-for="item in sexOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          >
+          </el-option>
+        </el-select>
       </div>
       <div class="form-item">
         <p class="title">
@@ -88,11 +95,20 @@
         <p class="title">
           <span class="prop">是否需要接机</span>
         </p>
-        <select name="" id="" v-model="formValue.ishb">
+        <!-- <select name="" id="" v-model="formValue.ishb">
           <option value="" disabled selected hidden>请选择</option>
           <option value="1">是</option>
           <option value="0">否</option>
-        </select>
+        </select> -->
+        <el-select v-model="formValue.ishb" placeholder="请选择">
+          <el-option
+            v-for="item in ishbOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          >
+          </el-option>
+        </el-select>
       </div>
       <div class="form-item">
         <p class="title">
@@ -104,11 +120,20 @@
         <p class="title">
           <span class="prop">是否需要代订酒店</span>
         </p>
-        <select name="" id="" v-model="formValue.isjd">
+        <!-- <select name="" id="" v-model="formValue.isjd">
           <option value="" disabled selected hidden>请选择</option>
           <option value="1">是</option>
           <option value="0">否</option>
-        </select>
+        </select> -->
+        <el-select v-model="formValue.isjd" placeholder="请选择">
+          <el-option
+            v-for="item in isjdOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          >
+          </el-option>
+        </el-select>
       </div>
       <div class="form-item">
         <p class="title">
@@ -164,12 +189,35 @@
         <p class="title">
           <span class="prop">请选择参加的论坛</span>
         </p>
-        <select name="forum" id="" v-model="formValue.lt" multiple="multiple">
+        <!-- <select name="forum" id="" v-model="formValue.lt" multiple="multiple">
           <option value="" disabled selected>请选择（可多选）</option>
-          <option v-for="item in forumList" :key="item.id" :value="item.id">
+          <option v-for="item in forumOptions" :key="item.id" :value="item.id">
             {{ item.name }}
           </option>
-        </select>
+        </select> -->
+        <!-- <el-select v-model="formValue.lt" multiple placeholder="请选择">
+          <el-option
+            v-for="item in forumOptions"
+            :key="item.id"
+            :label="item.name"
+            :value="item.id"
+          >
+          </el-option>
+        </el-select> -->
+        <el-select
+          v-model="formValue.lt"
+          multiple
+          collapse-tags
+          placeholder="请选择"
+        >
+          <el-option
+            v-for="item in forumOptions"
+            :key="item.id"
+            :label="item.name"
+            :value="item.id"
+          >
+          </el-option>
+        </el-select>
       </div>
     </form>
 
@@ -189,7 +237,7 @@ export default {
     return {
       selectedInValue: "",
       selectedOutValue: "",
-      forumList: [],
+      forumOptions: [],
       formValue: {
         name: "",
         sex: "",
@@ -198,11 +246,11 @@ export default {
         number: "",
         crad: "",
         // 是否需要接机；0:不需要，1:需要
-        ishb: "0",
+        ishb: "",
         // 航班号
         hbh: "",
         // 代订酒店；0不需要，1需要
-        isjd: "0",
+        isjd: "",
         rzdate: "",
         tfdate: "",
         lt: [],
@@ -216,6 +264,18 @@ export default {
       },
       // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
       reg: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/,
+      ishbOptions: [
+        { label: "是", value: 1 },
+        { label: "否", value: 0 },
+      ],
+      isjdOptions: [
+        { label: "是", value: 1 },
+        { label: "否", value: 0 },
+      ],
+      sexOptions: [
+        { label: "男", value: "男" },
+        { label: "女", value: "女" },
+      ],
     };
   },
   methods: {
@@ -251,20 +311,20 @@ export default {
             "-" +
             (time.getMonth() + 1) +
             "-" +
-            time.getDate() 
+            time.getDate()
         : "";
     },
     getForumList() {
       axios
         .get("https://yb.cfbond.com/ba/sel_lt")
         .then((res) => {
-          console.log(res);
-          this.forumList = res.data.data;
+          this.forumOptions = res.data.data;
         })
         .catch((err) => {});
     },
     register() {
       console.log(this.formValue);
+
       if (
         this.formValue.name &&
         this.formValue.sex &&
@@ -281,15 +341,15 @@ export default {
         } else {
           this.formValue.rzdate = this.formData(this.formValue.rzdate);
           this.formValue.tfdate = this.formData(this.formValue.tfdate);
-          let json = {...this.formValue};
-          json.lt = json.lt.join(',');
+          let json = { ...this.formValue };
+          json.lt = json.lt.join(",");
           let params = {
-            json:JSON.stringify(json)
-          }
+            json: JSON.stringify(json),
+          };
           axios
-            .get("https://yb.cfbond.com/ba/add_register",{params})
+            .get("https://yb.cfbond.com/ba/add_register", { params })
             .then((res) => {
-              if(res.data.code === 200){
+              if (res.data.code === 200) {
                 this.$router.push({
                   path: "./Ended",
                   query: {
@@ -298,33 +358,31 @@ export default {
                     sex: this.formValue.sex,
                   },
                 });
-              }else{
+              } else {
                 MessageBox("", "报名失败");
               }
-              
             })
-            .catch((err) => {
-              this.$router.push({
-                path: "./Ended",
-                query: {
-                  success: true,
-                  name: this.formValue.name,
-                  sex: this.formValue.sex,
-                },
-              });
-            });
+            .catch((err) => {});
         }
       } else {
         for (const key in this.requireForm) {
           if (!this.formValue[key]) {
-            this.$refs[key].style.border = "1px solid #FF4747";
+            if (this.$refs[key].$el) {
+              this.$refs[key].$el.style.border = "1px solid #FF4747";
+            } else {
+              this.$refs[key].style.border = "1px solid #FF4747";
+            }
           }
         }
         MessageBox("", "请检查输入内容是否正确！*为必填项");
       }
     },
     inputChange(ref) {
-      this.$refs[ref].style.border = "none";
+      if (this.$refs[ref].$el) {
+        this.$refs[ref].$el.style.border = "none";
+      } else {
+        this.$refs[ref].style.border = "none";
+      }
     },
   },
   mounted() {
@@ -340,8 +398,8 @@ export default {
   padding-bottom: 2.66rem;
 }
 option {
-  width:100%;
-  color:#000;
+  width: 100%;
+  color: #000;
 }
 .form {
   width: 6.7rem;
@@ -361,6 +419,8 @@ option {
 
   input,
   select,
+  .el-select,
+  .el-select .el-input,
   .select-date {
     width: 6.7rem;
     height: 0.8rem;
@@ -371,10 +431,15 @@ option {
     border: none;
     border-radius: 0.08rem;
     color: #fff;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(134, 128, 128, 0.1);
   }
-  input{
-    font-size:16px;
+
+  .el-select {
+    padding: 0;
+  }
+
+  input {
+    font-size: 16px;
   }
 
   .select-date {
@@ -395,21 +460,5 @@ option {
   color: #0f3994;
   background: #00ddfe;
   border-radius: 0.08rem;
-}
-
-input::placeholder {
-  color: #fff;
-  opacity: 0.4;
-  font-size: 12px;
-  font-size: 0.3rem;
-  font-family: PingFang SC;
-}
-
-input::-webkit-input-placeholder {
-  color: #fff;
-  opacity: 0.4;
-  font-size: 12px;
-  font-size: 0.3rem;
-  font-family: PingFang SC;
 }
 </style>
