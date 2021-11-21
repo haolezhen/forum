@@ -165,7 +165,7 @@ transitionStart: function() {
 <style scoped lang="scss">
 .meeting {
   min-height:100%;
-  background: url("~@/assets/img/bottom.png") no-repeat center bottom,linear-gradient(to bottom,  #0f3a94 0%,#1d2088 100%);
+  background: url("~@/assets/img/bottom.png") no-repeat center bottom,radial-gradient(#0f3a94 0%,#1d2088 100%);
   background-size:100% auto;
 }
 
