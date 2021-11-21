@@ -11,6 +11,7 @@
         <input
           type="text"
           ref="name"
+          maxlength="40"
           v-model="formValue.name"
           placeholder="请输入姓名"
           @blur="inputChange('name')"
@@ -49,6 +50,7 @@
         <input
           type="text"
           ref="company"
+          maxlength="40"
           v-model="formValue.company"
           placeholder="请输入单位名称"
           @blur="inputChange('company')"
@@ -62,6 +64,7 @@
         <input
           type="text"
           ref="post"
+          maxlength="40"
           v-model="formValue.post"
           placeholder="请输入职务"
           @blur="inputChange('post')"
@@ -114,7 +117,7 @@
         <p class="title">
           <span class="prop">航班号</span>
         </p>
-        <input type="text" v-model="formValue.hbh" placeholder="请输入航班号" />
+        <input type="text" maxlength="40" v-model="formValue.hbh" placeholder="请输入航班号" />
       </div>
       <div class="form-item">
         <p class="title">
@@ -182,6 +185,7 @@
           month-format="{value}"
           date-format="{value}"
           @confirm="dateOutConfirm()"
+          :startDate="startDate"
         >
         </mt-datetime-picker>
       </div>
@@ -276,7 +280,13 @@ export default {
         { label: "男", value: "男" },
         { label: "女", value: "女" },
       ],
+      startDate:new Date()
     };
+  },
+  watch:{
+    selectedInValue(val){
+      this.startDate = new Date(val)
+    }
   },
   methods: {
     selectInData() {

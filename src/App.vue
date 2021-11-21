@@ -23,7 +23,7 @@ export default ({
       }
     },
     wxShare(){
-      var _title = '2021中国企业家博鳌论坛';
+      var _title = '2021中国财富峰会';
 			var link = location.href;
       let desc = '2021年12月2日-4日 我们在博鳌等您';
       var Img = require('../public/icon.png');//实际自己的图片路径地址
