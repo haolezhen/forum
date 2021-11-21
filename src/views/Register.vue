@@ -374,7 +374,7 @@ export default {
             }
           }
         }
-        MessageBox("", "请检查输入内容是否正确！*为必填项");
+        MessageBox("", "请检查输入内容是否正确</br>*为必填项");
       }
     },
     inputChange(ref) {
@@ -431,7 +431,7 @@ option {
     border: none;
     border-radius: 0.08rem;
     color: #fff;
-    background: rgba(134, 128, 128, 0.1);
+    background: rgba(255,255,255,0.2);
   }
 
   .el-select {
@@ -440,12 +440,12 @@ option {
 
   input {
     font-size: 16px;
+    background:rgba(255,255,255,0.2)!important;
   }
 
   .select-date {
     line-height: 0.8rem;
     color: #fff;
-    opacity: 0.4;
   }
 }
 
@@ -460,5 +460,23 @@ option {
   color: #0f3994;
   background: #00ddfe;
   border-radius: 0.08rem;
+}
+</style>
+<style>
+.mint-msgbox{
+  width:5.4rem;
+  border-radius: .08rem;
+}
+.mint-msgbox-content{
+  padding:0.41rem 0.79rem 0.38rem 0.8rem;
+}
+.mint-msgbox-message{
+  color:#333;
+  font-size:0.34rem;
+  font-family: PingFang-SC-ExtraLight;
+}
+.mint-msgbox-btn{
+  font-size:0.34rem;
+  color:#007AFF;
 }
 </style>

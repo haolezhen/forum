@@ -61,7 +61,7 @@ export default {
 .line {
   width: 6.5rem;
   height: 0.02rem;
-  margin: 0.24rem 0 0.38rem;
+  margin: 0.24rem 0 0.40rem;
   background: linear-gradient(90deg, #03d9eb, #007eff);
 }
 

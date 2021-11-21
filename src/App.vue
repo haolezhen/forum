@@ -108,15 +108,15 @@ input::-webkit-input-placeholder {
   font-family: PingFang SC;
 }
 
-.register .el-select { 
-  background: transparent !important;
+.register .el-select ,.select-date{ 
+  background: rgba(255,255,255,0.2) !important;
 }
 
 .register .el-input__inner {
   height: 0.8rem;
   font-size: 0.3rem;
   font-family: PingFang SC;
-  background-color: rgba(134, 128, 128, 0.1);
+  background-color: transparent;
   border: none;
   color: #fff;
 }

@@ -39,7 +39,7 @@ export default {
 
 .step {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   font-size:0.22rem;
 }
 
@@ -48,12 +48,13 @@ export default {
   font-family: PingFang-SC-ExtraLight;
   /* font-weight: bold; */
   color: #ffffff;
-  width:1.5rem;
-  line-height:.5rem;
+  width:1.39rem;
+  line-height:.62rem;
 }
 
 .step-center {
   position: relative;
+  margin:0 0.24rem;
 }
 
 .step-center .step-dot {
@@ -64,7 +65,7 @@ export default {
   border-radius: 50%;
   background-color: rgba(0, 225, 254, 0.2);
   z-index: 2;
-  top:0.03rem;
+  top:0.07rem;
 }
 
 .step-center .dot2 {
@@ -84,7 +85,7 @@ export default {
   position: absolute;
   width: 1px;
   height: 100%;
-  top: 0.2rem;
+  top: 0.3rem;
   left: -1px;
   opacity: 0.5;
   background-color: #00e1fe;
@@ -95,13 +96,13 @@ export default {
 }
 
 .step-info {
-  width: 60%;
+  width: 69%;
   /* height: 0.61rem; */
   font-family: PingFang-SC-ExtraLight;
-  /* font-weight: bold; */
-  margin-bottom:0.26rem;
+  margin-bottom:0.32rem;
   color: #ffffff;
-  line-height:.5rem;
+  line-height:.62rem;
+  font-size:0.26rem;
 }
 .isColor{
   background: linear-gradient(90deg, #FFE07E 0%, #FF9834 100%);

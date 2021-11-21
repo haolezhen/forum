@@ -173,7 +173,7 @@ transitionStart: function() {
   width: 7.5rem;
   height: 1.54rem;
   background: #1e48c7;
-  box-shadow: 0rem 0rem 0rem 0rem rgba(6, 23, 57, 0.2);
+  box-shadow: 0rem 0rem 0.2rem 0rem rgba(6, 23, 57, 0.2);
   padding:0.24rem 0;
 }
 
@@ -184,7 +184,7 @@ transitionStart: function() {
   color: #ffffff;
 }
 .details-item{
-  margin-bottom:0.38rem;
+  margin-bottom:0.4rem;
 }
 .details-item:last-child{
   margin-bottom:0;
