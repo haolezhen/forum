@@ -184,8 +184,9 @@
           year-format="{value}"
           month-format="{value}"
           date-format="{value}"
-          @confirm="dateOutConfirm()"
           :startDate="startDate"
+          @confirm="dateOutConfirm()"
+          
         >
         </mt-datetime-picker>
       </div>
@@ -286,6 +287,7 @@ export default {
   watch:{
     selectedInValue(val){
       this.startDate = new Date(val)
+      this.selectedOutValue = val;
     }
   },
   methods: {
@@ -308,7 +310,7 @@ export default {
       if (this.selectedOutValue) {
         this.formValue.tfdate = this.selectedOutValue;
       } else {
-        this.formValue.tfdate = new Date();
+        this.formValue.tfdate = this.selectedInValue === '' ? new Date() : new Date(this.selectedInValue);
       }
       this.$refs["dateOutPicker"].open();
     },
@@ -320,9 +322,9 @@ export default {
       return time
         ? time.getFullYear() +
             "-" +
-            (time.getMonth() + 1) +
+            (time.getMonth() + 1).toString().padStart(2, '0') +
             "-" +
-            time.getDate()
+            time.getDate().toString().padStart(2, '0')
         : "";
     },
     getForumList() {
