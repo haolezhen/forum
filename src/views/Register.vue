@@ -316,6 +316,7 @@ export default {
       this.selectedOutValue = this.formData(this.formValue.tfdate);
     },
     formData(time) {
+      if(!time.getFullYear) return time;
       return time
         ? time.getFullYear() +
             "-" +
@@ -369,7 +370,7 @@ export default {
                   },
                 });
               } else {
-                MessageBox("", "报名失败");
+                MessageBox("", res.data.msg);
               }
             })
             .catch((err) => {});
