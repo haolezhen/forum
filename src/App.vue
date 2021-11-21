@@ -121,12 +121,12 @@ input::-webkit-input-placeholder {
   border: none;
   color: #fff;
 }
-@font-face {
+/* @font-face {
   font-family: 'PingFang-SC-ExtraLight';
   src: url('~@/assets/fonts/PINGFANG LIGHT.TTF'); 
 } 
 @font-face {
   font-family: 'PingFang SC';
   src: url('~@/assets/fonts/PINGFANG REGULAR.TTF'); 
-} 
+}  */
 </style>

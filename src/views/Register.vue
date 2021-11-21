@@ -318,13 +318,16 @@ export default {
       this.selectedOutValue = this.formData(this.formValue.tfdate);
     },
     formData(time) {
+      var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+      let fuhao = '-';
+      if(isiOS){fuhao = '/'};
       if(!time.getFullYear) return time;
       return time
         ? time.getFullYear() +
-            "-" +
-            (time.getMonth() + 1).toString().padStart(2, '0') +
-            "-" +
-            time.getDate().toString().padStart(2, '0')
+            fuhao +
+            (time.getMonth() + 1) +
+            fuhao +
+            time.getDate()
         : "";
     },
     getForumList() {
