@@ -287,7 +287,6 @@ export default {
   watch:{
     selectedInValue(val){
       this.startDate = new Date(val)
-      this.selectedOutValue = val;
     }
   },
   methods: {

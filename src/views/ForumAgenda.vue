@@ -31,8 +31,8 @@ export default {
 
 <style scoped>
 .forum-agenda {
-  background: url("~@/assets/img/date.jpg") no-repeat center bottom #19278b;
-  background-size: contain;
+  background: url("~@/assets/img/bottom.png") no-repeat center bottom,radial-gradient(#0f3a94 0%,#1d2088 100%);
+  background-size:100% auto;
   padding-bottom: 3.28rem;
 }
 
