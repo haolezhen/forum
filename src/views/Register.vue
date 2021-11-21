@@ -442,7 +442,7 @@ option {
     border: none;
     border-radius: 0.08rem;
     color: #fff;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
   }
 
   .el-select {
@@ -451,7 +451,7 @@ option {
 
   input {
     font-size: 16px;
-    background:rgba(255,255,255,0.2)!important;
+    background:rgba(255,255,255,0.1)!important;
   }
 
   .select-date {
