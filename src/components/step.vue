@@ -48,8 +48,9 @@ export default {
   font-family: PingFang-SC-ExtraLight;
   /* font-weight: bold; */
   color: #ffffff;
-  -width:1.39rem;
+  width:1.39rem;
   line-height:.62rem;
+  text-align:right;
 }
 
 .step-center {
