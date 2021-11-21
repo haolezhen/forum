@@ -52,7 +52,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scooped>
+<style lang="scss" scoped>
 .ended {
   min-height:100vh;
   background: url(~@/assets/img/common.jpg)  no-repeat center bottom #19278b;;
