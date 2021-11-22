@@ -184,8 +184,9 @@
           year-format="{value}"
           month-format="{value}"
           date-format="{value}"
-          @confirm="dateOutConfirm()"
           :startDate="startDate"
+          @confirm="dateOutConfirm()"
+          
         >
         </mt-datetime-picker>
       </div>
@@ -308,7 +309,7 @@ export default {
       if (this.selectedOutValue) {
         this.formValue.tfdate = this.selectedOutValue;
       } else {
-        this.formValue.tfdate = new Date();
+        this.formValue.tfdate = this.selectedInValue === '' ? new Date() : new Date(this.selectedInValue);
       }
       this.$refs["dateOutPicker"].open();
     },
@@ -316,12 +317,15 @@ export default {
       this.selectedOutValue = this.formData(this.formValue.tfdate);
     },
     formData(time) {
+      var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+      let fuhao = '-';
+      if(isiOS){fuhao = '/'};
       if(!time.getFullYear) return time;
       return time
         ? time.getFullYear() +
-            "-" +
+            fuhao +
             (time.getMonth() + 1) +
-            "-" +
+            fuhao +
             time.getDate()
         : "";
     },

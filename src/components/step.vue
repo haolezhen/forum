@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="step-list">
-      <div class="step" :class="{isColor:item.isColor}" v-for="(item, index) in agenda" :key="index">
+      <div class="step" :class="[{isColor:item.isColor},{isAn:!isIos},{isIos:isIos}]" v-for="(item, index) in agenda" :key="index">
         <p class="step-time">{{ item.time }}</p>
         <div class="step-center">
           <p class="step-dot">
@@ -25,6 +25,11 @@ export default {
       },
     },
   },
+  data(){
+    return {
+      isIos:!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+    }
+  }
 };
 </script>
 
@@ -105,10 +110,13 @@ export default {
   line-height:.62rem;
   font-size:0.26rem;
 }
-.isColor{
+.isColor.isAn{
   background: linear-gradient(90deg, #FFE07E 0%, #FF9834 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size:0.24rem;
+}
+.isColor.isIos{
   font-size:0.24rem;
 }
 .isColor .step-dot{
@@ -123,5 +131,8 @@ export default {
 .step-info span{
   display:block;
   margin-bottom:0.26rem;
+}
+.isColor.isIos .step-time,.isColor.isIos .step-info{
+  color:rgba(255, 223, 126, 1);
 }
 </style>
