@@ -73,7 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
-  min-height:100vh;
+  min-height: 100vh;
   background: url("~@/assets/img/common.jpg") no-repeat center bottom #19278b;
   background-size: cover;
   padding-bottom: 2.49rem;
@@ -81,13 +81,13 @@ export default {
 
 .contact-title {
   text-align: center;
-  margin:.8rem 0 .6rem;
+  margin: 0.8rem 0 0.6rem;
 }
 
 .contact-title img {
   width: 4.32rem;
-  margin:0 auto;
-  display:block;
+  margin: 0 auto;
+  display: block;
 }
 
 .phone-list {
@@ -121,6 +121,8 @@ export default {
 
 .phone-info {
   -margin-left: 1rem;
+  // font-family: "微软雅黑";
+  font-family:"Microsoft YaHei";
 }
 
 .number {
