@@ -117,7 +117,12 @@
         <p class="title">
           <span class="prop">航班号</span>
         </p>
-        <input type="text" maxlength="40" v-model="formValue.hbh" placeholder="请输入航班号" />
+        <input
+          type="text"
+          maxlength="40"
+          v-model="formValue.hbh"
+          placeholder="请输入航班号"
+        />
       </div>
       <div class="form-item">
         <p class="title">
@@ -186,12 +191,12 @@
           date-format="{value}"
           :startDate="startDate"
           @confirm="dateOutConfirm()"
-          
         >
         </mt-datetime-picker>
       </div>
       <div class="form-item">
         <p class="title">
+          <span class="star">*</span>
           <span class="prop">请选择参加的论坛</span>
         </p>
         <!-- <select name="forum" id="" v-model="formValue.lt" multiple="multiple">
@@ -210,10 +215,12 @@
           </el-option>
         </el-select> -->
         <el-select
+          ref="lt"
           v-model="formValue.lt"
           multiple
           collapse-tags
           placeholder="请选择"
+          @blur="inputChange('lt')"
         >
           <el-option
             v-for="item in forumOptions"
@@ -266,6 +273,7 @@ export default {
         company: "",
         post: "",
         number: "",
+        lt: [],
       },
       // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
       reg: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/,
@@ -281,13 +289,13 @@ export default {
         { label: "男", value: "0" },
         { label: "女", value: "1" },
       ],
-      startDate:new Date()
+      startDate: new Date(),
     };
   },
-  watch:{
-    selectedInValue(val){
-      this.startDate = new Date(val)
-    }
+  watch: {
+    selectedInValue(val) {
+      this.startDate = new Date(val);
+    },
   },
   methods: {
     selectInData() {
@@ -309,7 +317,10 @@ export default {
       if (this.selectedOutValue) {
         this.formValue.tfdate = this.selectedOutValue;
       } else {
-        this.formValue.tfdate = this.selectedInValue === '' ? new Date() : new Date(this.selectedInValue);
+        this.formValue.tfdate =
+          this.selectedInValue === ""
+            ? new Date()
+            : new Date(this.selectedInValue);
       }
       this.$refs["dateOutPicker"].open();
     },
@@ -318,9 +329,11 @@ export default {
     },
     formData(time) {
       var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-      let fuhao = '-';
-      if(isiOS){fuhao = '/'};
-      if(!time.getFullYear) return time;
+      let fuhao = "-";
+      if (isiOS) {
+        fuhao = "/";
+      }
+      if (!time.getFullYear) return time;
       return time
         ? time.getFullYear() +
             fuhao +
@@ -338,14 +351,15 @@ export default {
         .catch((err) => {});
     },
     register() {
-      console.log(this.formValue);
+      // console.log(this.formValue);
 
       if (
         this.formValue.name &&
         this.formValue.sex &&
         this.formValue.company &&
         this.formValue.post &&
-        this.formValue.number
+        this.formValue.number &&
+        this.formValue.lt.length !== 0
       ) {
         if (this.formValue.number.length !== 11) {
           this.$refs["number"].style.border = "1px solid #FF4747";
@@ -381,7 +395,7 @@ export default {
         }
       } else {
         for (const key in this.requireForm) {
-          if (!this.formValue[key]) {
+          if (!this.formValue[key] || this.formValue[key].length === 0) {
             if (this.$refs[key].$el) {
               this.$refs[key].$el.style.border = "1px solid #FF4747";
             } else {
@@ -446,7 +460,7 @@ option {
     border: none;
     border-radius: 0.08rem;
     color: #fff;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .el-select {
@@ -455,7 +469,7 @@ option {
 
   input {
     font-size: 16px;
-    background:rgba(255,255,255,0.1)!important;
+    background: rgba(255, 255, 255, 0.1) !important;
   }
 
   .select-date {
@@ -478,20 +492,20 @@ option {
 }
 </style>
 <style>
-.mint-msgbox{
-  width:5.4rem;
-  border-radius: .08rem;
+.mint-msgbox {
+  width: 5.4rem;
+  border-radius: 0.08rem;
 }
-.mint-msgbox-content{
-  padding:0.41rem 0.79rem 0.38rem 0.8rem;
+.mint-msgbox-content {
+  padding: 0.41rem 0.79rem 0.38rem 0.8rem;
 }
-.mint-msgbox-message{
-  color:#333;
-  font-size:0.34rem;
+.mint-msgbox-message {
+  color: #333;
+  font-size: 0.34rem;
   font-family: PingFang-SC-ExtraLight;
 }
-.mint-msgbox-btn{
-  font-size:0.34rem;
-  color:#007AFF;
+.mint-msgbox-btn {
+  font-size: 0.34rem;
+  color: #007aff;
 }
 </style>
