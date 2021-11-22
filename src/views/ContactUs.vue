@@ -93,7 +93,7 @@ export default {
 .phone-list {
   width: 6.4rem;
   margin: 0.59rem auto;
-  padding: 0.8rem 0.51rem;
+  padding: 0.8rem 1.4rem;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0rem;
 }
