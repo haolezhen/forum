@@ -68,9 +68,11 @@ export default {
 <style scoped>
 .animate__fadeInLeft {
   animation: fadeInLeft 1s;
+  -webkit-animation: fadeInLeft 1s;
 }
 .animate__fadeIn {
   animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
 }
 .home {
   width: 100%;
@@ -107,8 +109,8 @@ export default {
   border-radius: 0.08rem;
   color: #ffffff;
   background: rgba(255, 255, 255, 0);
-  transform: translate(-1.5rem, 0);
-  animation-fill-mode: forwards;
+  -transform: translate(-1.5rem, 0);
+  animation-fill-mode: both;
 }
 .home-link:first-child{
   margin-top:0;
