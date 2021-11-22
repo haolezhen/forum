@@ -277,8 +277,8 @@ export default {
         { label: "否", value: 0 },
       ],
       sexOptions: [
-        { label: "男", value: "男" },
-        { label: "女", value: "女" },
+        { label: "男", value: "0" },
+        { label: "女", value: "1" },
       ],
       startDate:new Date()
     };
